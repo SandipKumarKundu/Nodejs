@@ -1,0 +1,17 @@
+{
+  "name": "watson",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "expres": "0.0.5",
+    "express": "^4.16.2",
+    "watson-developer-cloud": "^2.41.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sandi[",
+  "license": "ISC",
+  "description": ""
+}
