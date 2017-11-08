@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Chat">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Views/Styles/Chat.css">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/ngstorage/0.3.10/ngStorage.min.js"></script>
+    <script src="Views/Controller/Chat.js" type="text/javascript"></script>
+    
+
+</head>
+<body class="container" ng-controller="ChatController">
+
+  <div id="live-chat">
+		
+		<header class="clearfix">
+			
+			<a href="#" class="chat-close">x</a>
+
+			<h4>John Doe</h4>
+
+			<span class="chat-message-counter">3</span>
+
+		</header>
+
+		<div class="chat">
+			
+			<div class="chat-history">
+				
+				<div class="chat-message clearfix" ng-repeat="messages in message">
+					
+					
+
+					<div class="chat-message-content clearfix">
+						
+						<span class="chat-time">{{messages.Timestamp | date:'MM-dd HH:mm'}}</span>
+
+						<h5>{{messages.Author}}</h5>
+
+						<p>{{messages.Text}}</p>
+
+					</div> <!-- end chat-message-content -->
+          <hr>
+				</div> <!-- end chat-message -->
+
+				
+
+			</div> <!-- end chat-history -->
+
+			<p class="chat-feedback">Your partner is typing…</p>
+
+			<form >
+
+				<fieldset>
+					
+					<input type="text" placeholder="Type your message…" ng-model="Text" autofocus><span>
+					<button class="glyphicon glyphicon-cloud"  ng-click="sendMessage()"></button></span>
+
+				</fieldset>
+
+			</form>
+
+		</div> <!-- end chat -->
+
+	</div> <!-- end live-chat -->
+
+</body>
+</html>
